@@ -1,0 +1,22 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Øystein Sigholt <oystein.sigholt@gmail.com>
+Date: Wed, 16 Mar 2022 19:08:54 +0100
+Subject: support arm64 64k page size
+
+---
+ build/config/compiler/BUILD.gn | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/build/config/compiler/BUILD.gn b/build/config/compiler/BUILD.gn
+index 48aa424f82e45e7af5f417b8a9801a313a266b88..3b8c7d9379906c6cf1085bb9926489f3962801a0 100644
+--- a/build/config/compiler/BUILD.gn
++++ b/build/config/compiler/BUILD.gn
+@@ -459,7 +459,7 @@ config("compiler") {
+       # Reduce the page size from 65536 in order to reduce binary size slightly
+       # by shrinking the alignment gap between segments. This also causes all
+       # segments to be mapped adjacently, which breakpad relies on.
+-      ldflags += [ "-Wl,-z,max-page-size=4096" ]
++      ldflags += [ "-Wl,-z,max-page-size=65536" ]
+     }
+   } else if (use_gold) {
+     ldflags += [ "-fuse-ld=gold" ]

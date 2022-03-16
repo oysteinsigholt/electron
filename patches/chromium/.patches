@@ -115,3 +115,4 @@ build_disable_partition_alloc_on_mac.patch
 build_disable_thin_lto_on_mac.patch
 fix_non-client_mouse_tracking_and_message_bubbling_on_windows.patch
 remove_incorrect_width_height_adjustments.patch
+support_arm64_64k_page_size.patch
